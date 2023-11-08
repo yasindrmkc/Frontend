@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        // function constructor
+        function Kisi(ad,meslek, dogumYili){
+            this.ad = ad;
+            this.meslek = meslek;
+            this.dogumYili = dogumYili;
+        }
+
+        let yasin = new Kisi("yasin" , "öğrenci" ,2002);
+
+        // class
+        class kisi{
+            constructor(ad,meslek,dogumYili) {
+                this.ad = ad;
+                this.meslek = meslek;
+                this.dogumYili = dogumYili;
+                console.log("nesne olusturuldu"); 
+            }
+        }
+
+        let kisi1 = new kisi("cınar turan" , "öğrenci", 2002);
+
+        console.log(kisi1);
+    </script>
+    
+</body>
+</html>

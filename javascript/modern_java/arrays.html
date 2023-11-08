@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        const sayilar = [1,5,7,3,2,67];
+
+        const urunler= [
+            {urunAdi : "İphone 11", fiyat : 12000},
+            {urunAdi : "İphone 12", fiyat : 15000},
+            {urunAdi : "İphone 13", fiyat : 18000},
+            {urunAdi : "İphone 13 Pro", fiyat : 22000}
+        ];
+
+        // const tekSayilar = [];
+        //
+        // for(let sayi of sayilar){
+        //     if(sayi%2 == 1){
+        //         tekSayilar.push(sayi);
+        //     }
+        // }
+
+        // daha kolay yolu
+
+        // const tekSayiKontrol = (sayi) => sayi%2== 1;
+
+        // const tekSayilar = sayilar.filter(tekSayiKontrol);
+        // console.log(tekSayilar);
+
+        // daha da kolay yolu
+        const tekSayilar = sayilar.filter((sayi) => sayi%2 == 1);
+        const tekSayilarTrueFalse = sayilar.map((sayi) => sayi%2 == 1);          // KOŞULA UYUYORSA TRUE UYMUYORSA FALSE YAZDIRIR
+        console.log(tekSayilar);
+        console.log(tekSayilarTrueFalse);
+
+
+        const sonuc = urunler.filter(urun => urun.urunAdi);
+        const sonuclar = urunler.filter(urun => urun.fiyat > 15000).map(urun => urun.urunAdi);
+        console.log(sonuc);
+        console.log(sonuclar);
+
+    </script>
+
+
+</body>
+</html>

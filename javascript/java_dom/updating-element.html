@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        Todo App
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="input-group">
+                            <input type="text" id="txtTaskName" class="form-control">
+                            <button type="submit" class="btn btn-primary" id="btnAddNewTask">
+                                Ekle
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="card mt-3">
+                <div class="card-header">
+                    <button id="btnClear" class="btn btn-danger btn-sm float-end">Temizle</button>
+                </div>
+                <ul id="task-list" class="list-group list-group flush"></ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        "use strict";
+
+        let gorevListesi = [
+            {"id" : 1,"gorevAdi":"Görev 1"},
+            {"id" : 2,"gorevAdi":"Görev 2"},
+            {"id" : 3,"gorevAdi":"Görev 3"},
+            {"id" : 4,"gorevAdi":"Görev 4"},
+        ];
+
+        let ul = document.getElementById("task-list");
+
+        for(let gorev of gorevListesi) {
+            let li = `
+                        <li class="task list-group-item">
+                            <div class="form-check">
+                                <input type="checkbox" id="${gorev.id}" class="form-check-input">
+                                <label for="${gorev.id}" class="form-check-label">${gorev.gorevAdi}</label>
+                            </div>
+                        </li>
+            `;
+            ul.insertAdjacentHTML("beforeend",li);
+        }
+
+        // Element güncelleştirme
+
+        // document.querySelector("#task-list").remove();          // Eleman Silme
+        // document.querySelector("#task-list").parentElement.remove();        // Elemanın parentını silme
+        // document.querySelector("#task-list").children.remove();             // Elemanın bir alt elemanını silme
+        
+        // document.querySelector("#task-list").removeAttribute("class");      // Ozel etiket silme
+        // document.querySelector("#task-list").setAttribute("class","aaa");   // Ozel etiketi yeniden adlandırma
+        
+        let btnEkle = document.querySelector("#btnAddNewTask");
+
+        // btnEkle.addEventListener("click",function(event) {
+        //     console.log("click event : new task");
+        //     event.preventDefault();     // Sayfanın yenilenmesini engelledik
+        // });
+
+        // btnClear.addEventListener("click",function(event) {
+        //     console.log("click event : clear");
+        //     event.preventDefault();
+        // });
+
+        // Her iki görev için aynı fonksiyonu çağırma
+        function newTask(event) {
+            console.log("Event");
+            event.preventDefault();
+        }
+
+        btnEkle.addEventListener("click",newTask);
+        btnClear.addEventListener("click",newTask);
+
+    </script>
+
+</body>
+</html>
