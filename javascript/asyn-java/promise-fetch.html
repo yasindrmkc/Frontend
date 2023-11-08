@@ -52,7 +52,7 @@
                 return fetch('https://restcountries.com/v3.1/alpha?codes=' + countries);
             })
             .then((response) => {
-                return response;
+                return response.json();
             })
             .then((data) => {
                 renderNeighbors(data);
